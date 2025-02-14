@@ -12,5 +12,21 @@
         <p>You've let it out. Now let's move forward.</p>
         <button onclick="window.location.href='index.html'">Back to Home</button>
     </div>
+    <h1>Take a Deep Breath</h1>
+<p id="reflectionMessage">Loading...</p>
+<button onclick="window.location.href='index.html'">Back to Home</button>
+
+<script>
+const messages = [
+    "You're stronger than you think.",
+    "Every storm runs out of rain.",
+    "Breathe. Reset. Move forward.",
+    "Your emotions are valid, but they don't define you."
+];
+
+document.getElementById("reflectionMessage").innerText =
+    messages[Math.floor(Math.random() * messages.length)];
+</script>
+
 </body>
 </html>
