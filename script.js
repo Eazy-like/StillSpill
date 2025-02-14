@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const signUpForm = document.querySelector("form");
+
+    if (signUpForm) {
+        signUpForm.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            window.location.href = "vent.html"; 
+        });
+    }
+});
