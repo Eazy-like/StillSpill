@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 1s ease-in-out, color 1s ease-in-out;
+}
+
+/* Dark Mode (Landing Page) */
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+/* Light Mode (Reflection Page) */
+body.light-mode {
+    background: #f4f4f4;
+    color: black;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+input {
+    background: #333;
+    color: white;
+}
+
+button {
+    background: #00c853;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
