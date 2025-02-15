@@ -6,15 +6,44 @@
     <title>Vent Space</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dark-theme"> <!-- Ensure theme consistency -->
     <div class="container">
         <h1>Vent It Out</h1>
-        <textarea id="ventInput" placeholder="Let it all out..."></textarea>
+
+        <!-- Circular Text Input -->
+        <div class="vent-box">
+            <textarea id="ventInput" placeholder="Let it all out..."></textarea>
+            <button id="micButton">🎤</button> <!-- Mic Button -->
+        </div>
+
+        <!-- Submit Button -->
         <button id="submitVent">Done Venting</button>
     </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-container">
+        <a href="profile.html">Profile</a>
+        <a href="history.html">History</a>
+        <a href="goals.html">Goals</a>
+        <a href="progress.html">Progress</a>
+        <a href="inbox.html">Inbox</a>
+        <a href="contacts.html">Contacts</a>
+    </div>
+
     <script>
+        // Redirect to Reflection Page
         document.getElementById("submitVent").addEventListener("click", function () {
-            window.location.href = "reflection.html"; // Redirect to reflection page
+            window.location.href = "reflection.html";
+        });
+
+        // Voice Input Functionality
+        document.getElementById("micButton").addEventListener("click", function () {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.start();
+            
+            recognition.onresult = function (event) {
+                document.getElementById("ventInput").value = event.results[0][0].transcript;
+            };
         });
     </script>
 </body>
