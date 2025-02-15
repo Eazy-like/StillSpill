@@ -22,3 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.getElementById("micButton").addEventListener("click", function () {
+    alert("Voice input feature coming soon!");
+});
