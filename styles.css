@@ -137,3 +137,27 @@ textarea::placeholder {
         font-size: 26px;
     }
 }
+.vent-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+textarea {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: none;
+    outline: none;
+    resize: none;
+    text-align: center;
+    overflow: hidden;
+}
+
