@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StillSpill - Sign Up</title>
+    <title>StillSpill - Let it out</title>
+    
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons (Mic Button) -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </head>
-<body class="dark-mode">
+<body class="dark-theme">
+
+    <!-- Navigation Menu -->
+    <nav class="nav-container">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/profile.html">Profile</a>
+        <a href="pages/history.html">History</a>
+        <a href="pages/goals.html">Goals</a>
+        <a href="pages/progress.html">Progress</a>
+        <a href="pages/inbox.html">Inbox</a>
+        <a href="pages/contacts.html">Contacts</a>
+    </nav>
+
     <div class="container">
-        <h1>StillSpill</h1>
-        <p>Let it out, then let it go.</p>
-        <form id="signup-form">
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="#">Login</a></p>
+        <h1>Vent It Out</h1>
+
+        <!-- Circular Text Input Box -->
+        <div class="vent-box">
+            <textarea id="ventInput" placeholder="Let it all out..."></textarea>
+            
+            <!-- Mic Button for Voice Input -->
+            <button id="micButton">
+                <i class="fas fa-microphone"></i> <!-- Microphone Icon -->
+            </button>
+        </div>
+
+        <button id="submitVent">Done Venting</button>
     </div>
+
+    <!-- Link to External JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>
-
