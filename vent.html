@@ -3,48 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vent Space</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
 </head>
-<body class="dark-theme"> <!-- Ensure theme consistency -->
-    <div class="container">
-        <h1>Vent It Out</h1>
-
-        <!-- Circular Text Input -->
-        <div class="vent-box">
-            <textarea id="ventInput" placeholder="Let it all out..."></textarea>
-            <button id="micButton">🎤</button> <!-- Mic Button -->
-        </div>
-
-        <!-- Submit Button -->
-        <button id="submitVent">Done Venting</button>
-    </div>
-
-    <!-- Navigation Menu -->
-    <div class="nav-container">
+<body class="dark-theme">
+    <nav class="nav-container">
+        <a href="index.html">Home</a>
         <a href="profile.html">Profile</a>
         <a href="history.html">History</a>
         <a href="goals.html">Goals</a>
         <a href="progress.html">Progress</a>
-        <a href="inbox.html">Inbox</a>
+        <a href="messages.html">Inbox</a>
         <a href="contacts.html">Contacts</a>
+    </nav>
+
+    <div class="container">
+        <h1>Vent It Out</h1>
+        <div class="vent-box">
+            <textarea id="ventInput" placeholder="Let it all out..."></textarea>
+            <button id="micButton">🎤</button> <!-- Mic Button -->
+        </div>
+        <button id="submitVent">Done Venting</button>
     </div>
 
-    <script>
-        // Redirect to Reflection Page
-        document.getElementById("submitVent").addEventListener("click", function () {
-            window.location.href = "reflection.html";
-        });
-
-        // Voice Input Functionality
-        document.getElementById("micButton").addEventListener("click", function () {
-            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-            recognition.start();
-            
-            recognition.onresult = function (event) {
-                document.getElementById("ventInput").value = event.results[0][0].transcript;
-            };
-        });
-    </script>
+    <script src="script.js"></script> <!-- Ensure this path is correct -->
 </body>
 </html>
+
