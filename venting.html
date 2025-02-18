@@ -4,87 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StillSpill - Vent</title>
-    <link rel="stylesheet" href="styles.css">  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>  <style>
-        /* Basic Styling - Move to your styles.css */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background-color: #202020;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 400px; /* Adjust as needed */
-        }
-
-        h1 {
-            color: #673ab7; /* Example color */
-            margin-bottom: 20px;
-        }
-
-        .vent-box {
-            margin-bottom: 20px;
-        }
-
-        textarea {
-            width: calc(100% - 22px);
-            padding: 10px;
-            height: 150px; /* Adjust height as needed */
-            border: 1px solid #424242;
-            background-color: #303030;
-            color: #ffffff;
-            border-radius: 4px;
-            resize: vertical; /* Allow vertical resizing */
-        }
-        textarea:focus {
-            outline: none;
-            border-color: #673ab7;  /* Highlight on focus */
-            box-shadow: 0 0 5px rgba(103, 58, 183, 0.3); /* Subtle glow on focus */
-        }
-
-        button {
-            background-color: #673ab7;
-            color: #ffffff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 0 5px; /* Add some space between buttons */
-        }
-
-        button:hover {
-            background-color: #512da8;
-        }
-
-        #micButton { /* Style the mic button */
-            background-color: transparent; /* Make background transparent */
-            border: none;
-            padding: 10px;
-            color: #673ab7;
-            font-size: 20px; /* Adjust size as needed */
-            cursor: pointer;
-        }
-        #micButton:hover {
-            color: #512da8;
-        }
-
-        audio {
-            margin-top: 20px;
-            display: none; /* Hide the default audio controls */
-        }
-
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>  </head>
+<body class="dark-theme">
 
     <div class="container">
         <h1>Vent It Out</h1>
@@ -98,81 +20,8 @@
 
         <button id="playAudio"><i class="fas fa-headphones"></i> Listen</button>
 
-        <audio id="motivationAudio" src="assets/motivation.mp3"></audio>  </div>
+        <audio id="motivationAudio" src="assets/motivation.mp3"></audio>
+    </div>
 
-    <script>
-        document.getElementById("submitVent").addEventListener("click", function () {
-            //  Here, you would likely want to:
-            // 1. Get the text from the textarea.
-            // 2. Send it to your server (e.g., using fetch or XMLHttpRequest) to save it.
-            // 3. Handle the server response.
-            // 4. Redirect only after successful server interaction.
-
-            // Placeholder for now:
-            const ventText = document.getElementById("ventInput").value;
-            console.log("Venting Text:", ventText); // For debugging - remove in production
-            alert("Venting submitted (Placeholder - Implement server-side logic)");
-
-            // Example using fetch (you'll need a backend):
-            /*
-            fetch('/saveVent', {  // Replace with your server endpoint
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ vent: ventText })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = "reflection.html";
-                } else {
-                    alert(data.message); // Server error message
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("An error occurred while saving your vent.");
-            });
-            */
-
-
-        });
-
-        document.getElementById("playAudio").addEventListener("click", function () {
-            const audio = document.getElementById("motivationAudio");
-            audio.play();
-
-            // Optional: Add an event listener for when the audio finishes playing
-            audio.addEventListener('ended', () => {
-                // You can add code here to do something after the audio finishes,
-                // like redirecting the user or displaying a message.
-                console.log("Audio playback finished.");
-            });
-        });
-
-
-        // Microphone/Speech-to-Text (Basic Example - Browser Support Varies)
-        const micButton = document.getElementById("micButton");
-        const ventInput = document.getElementById("ventInput");
-
-        micButton.addEventListener('click', () => {
-            // Check for browser support
-            if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-                const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-
-                recognition.onresult = (event) => {
-                    const transcript = event.results[0][0].transcript;
-                    ventInput.value += transcript + " "; // Append to existing text
-                };
-
-                recognition.start();
-            } else {
-                alert('Speech Recognition is not supported in this browser.');
-            }
-        });
-
-    </script>
-
-</body>
+    <script src="vent.js"></script> </body>
 </html>
