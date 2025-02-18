@@ -1,38 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StillSpill - Coming Soon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>StillSpill</h1>
-        <p>Something amazing is coming soon. Stay tuned!</p>
-    </div>
-</body>
-</html>
+/* styles.css */
+body {
+    font-family: 'Roboto', sans-serif; /* Use a more modern font */
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure full viewport height */
+    margin: 0;
+    text-align: center; /* Center text within container */
+}
+
+.dark-theme { /* Dark theme styles (if needed) */
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 600px;
+    padding: 40px; /* Add some padding around the content */
+    background-color: #202020; /* Slightly lighter background for contrast */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px; /* Increased margin */
+    color: #673ab7; /* Example color - use your branding color */
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.9;  /* Slightly less transparent */
+    margin-bottom: 30px; /* Increased margin */
+}
+
+.social-links {
+    margin-top: 20px; /* Space above social links */
+}
+
+.social-links a {
+    display: inline-block; /* Make links inline blocks */
+    margin: 0 10px; /* Space between links */
+    color: #ffffff; /* Social media icon color */
+    font-size: 1.5rem; /* Adjust icon size as needed */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.social-links a:hover {
+    color: #673ab7; /* Example hover color */
+}
+
+/* Include Font Awesome (or your icon library) */
+/* Make sure you include the Font Awesome CSS in your HTML */
+/* Example: <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> */
