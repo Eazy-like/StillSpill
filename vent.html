@@ -3,30 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
+    <title>StillSpill - Vent</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </head>
 <body class="dark-theme">
-    <nav class="nav-container">
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="history.html">History</a>
-        <a href="goals.html">Goals</a>
-        <a href="progress.html">Progress</a>
-        <a href="messages.html">Inbox</a>
-        <a href="contacts.html">Contacts</a>
-    </nav>
 
     <div class="container">
         <h1>Vent It Out</h1>
+        
         <div class="vent-box">
             <textarea id="ventInput" placeholder="Let it all out..."></textarea>
-            <button id="micButton">🎤</button> <!-- Mic Button -->
+            <button id="micButton"><i class="fas fa-microphone"></i></button>
         </div>
+
         <button id="submitVent">Done Venting</button>
+        
+        <!-- Play audio motivation after venting -->
+        <button id="playAudio"><i class="fas fa-headphones"></i> Listen</button>
+        
+        <audio id="motivationAudio" src="assets/motivation.mp3"></audio>
     </div>
 
-    <script src="script.js"></script> <!-- Ensure this path is correct -->
+    <script>
+        document.getElementById("submitVent").addEventListener("click", function () {
+            window.location.href = "reflection.html";
+        });
+
+        // Audio playback
+        document.getElementById("playAudio").addEventListener("click", function () {
+            document.getElementById("motivationAudio").play();
+        });
+    </script>
+
 </body>
 </html>
-
