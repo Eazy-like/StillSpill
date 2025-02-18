@@ -6,142 +6,22 @@
     <title>StillSpill - Sign Up</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Basic Styling -  Move this to your styles.css file */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #ffffff; /* White text */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .signup-container {
-            background-color: #202020; /* Slightly lighter background for container */
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 350px; /* Adjust width as needed */
-        }
-
-        h1 {
-            color: #673ab7; /* Example color -  use your branding color */
-            margin-bottom: 10px;
-        }
-
-        .motivation {
-            font-style: italic;
-            color: #9e9e9e; /* Slightly lighter text color */
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: calc(100% - 22px); /* Account for padding and border */
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #424242; /* Darker border */
-            background-color: #303030; /* Darker input background */
-            color: #ffffff; /* White text in inputs */
-            border-radius: 4px;
-        }
-        input:focus {
-            outline: none;
-            border-color: #673ab7;  /* Highlight on focus */
-            box-shadow: 0 0 5px rgba(103, 58, 183, 0.3); /* Subtle glow on focus */
-
-        }
-
-        button {
-            background-color: #673ab7; /* Example color */
-            color: #ffffff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #512da8; /* Darker shade on hover */
-        }
-
-        .login-link {
-            margin-top: 20px;
-        }
-
-        .login-link a {
-            color: #673ab7; /* Example color */
-            text-decoration: none;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body>
+<body class="dark-theme">
 
     <div class="signup-container">
         <h1>StillSpill</h1>
         <p class="motivation">"There is light at the end of the tunnel."</p>
 
         <form id="signupForm">
-            <input type="text" placeholder="Username" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">Sign Up</button>
         </form>
 
-        <p class="login-link">Already have an account? <a href="login.html">Log in</a></p> </div>
+        <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
 
-    <script>
-        document.getElementById("signupForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            //  Instead of a direct redirect, you'll likely want to:
-            // 1. Validate the form data (client-side)
-            // 2. Send the data to your server (e.g., using fetch or XMLHttpRequest)
-            // 3. Handle the server response (success or error)
-            // 4. Redirect or display a message based on the response.
-
-            // Placeholder for demonstration:
-             // For now, let's just show an alert
-            alert("Sign Up clicked (Placeholder -  Implement server-side logic)");
-
-            // Example using fetch (you'll need a backend to handle this):
-            /*
-            fetch('/signup', {  // Replace '/signup' with your server endpoint
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    username: document.querySelector('input[type="text"]').value,
-                    email: document.querySelector('input[type="email"]').value,
-                    password: document.querySelector('input[type="password"]').value
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    window.location.href = "venting.html";
-                } else {
-                    alert(data.message); // Display error message from server
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("An error occurred during signup.");
-            });
-            */
-
-
-        });
-    </script>
-
-</body>
+    <script src="script.js"></script> </body>
 </html>
